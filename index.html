@@ -1,0 +1,1340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ApexScreen AI | Enterprise Resume Screening SaaS</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Bootstrap 5 CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <!-- FontAwesome 6 Icons CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom Style Sheet -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- =========================================================================
+         1. LANDING PAGE VIEW
+         ========================================================================= -->
+    <section id="landing-view" class="view-section">
+        <!-- Landing Navbar -->
+        <nav class="navbar landing-navbar fixed-top">
+            <div class="container">
+                <a class="navbar-brand landing-logo" href="#" onclick="showView('landing')">
+                    <i class="fa-solid fa-brain-circuit me-2"></i>Apex<span>Screen AI</span>
+                </a>
+                <div class="d-flex align-items-center gap-3">
+                    <a href="#" class="text-decoration-none text-muted fw-bold me-3 d-none d-sm-inline" onclick="showAuthView('login')">Login</a>
+                    <button class="btn btn-primary" onclick="showAuthView('signup')">Get Started</button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <div class="hero-section text-center">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <span class="feature-pill"><i class="fa-solid fa-sparkles me-2"></i>Recruiter-Focused AI Recruitment</span>
+                        <h1 class="hero-title">Screen Resumes in Bulk.<br>Rank Candidates <span>Intelligently</span>.</h1>
+                        <p class="hero-subtitle text-muted">Accelerate your hiring pipeline with bias-aware, explainable AI matching. Evaluate candidate experiences, skill graphs, and educational relevance instantly against custom Job Descriptions.</p>
+                        <div class="d-flex justify-content-center gap-3">
+                            <button class="btn btn-primary btn-lg" onclick="showAuthView('signup')">Create Recruiter Account</button>
+                            <button class="btn btn-outline-primary btn-lg" href="#how-it-works" onclick="scrollToElement('how-it-works')">Learn How It Works</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Dashboard Mockup/Preview Section -->
+        <div class="container text-center mb-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="preview-mockup p-3">
+                        <div class="d-flex align-items-center justify-content-between mb-3 border-bottom pb-2">
+                            <div class="d-flex align-items-center gap-2">
+                                <span style="width: 12px; height: 12px; border-radius: 50%; background-color: #E8B38C; display: inline-block;"></span>
+                                <span style="width: 12px; height: 12px; border-radius: 50%; background-color: #BB8644; display: inline-block;"></span>
+                                <span style="width: 12px; height: 12px; border-radius: 50%; background-color: #909E84; display: inline-block;"></span>
+                            </div>
+                            <span class="text-muted fs-7">SaaS Recruiter Workspace Preview</span>
+                        </div>
+                        <div class="bg-light p-4 text-start rounded" style="min-height: 250px;">
+                            <div class="row">
+                                <div class="col-md-3 border-end">
+                                    <h6 class="fw-bold mb-3"><i class="fa-solid fa-list me-2"></i>Jobs</h6>
+                                    <div class="p-2 mb-2 bg-white rounded shadow-sm border-start border-3 border-primary text-truncate fs-7 fw-bold">Senior AI Engineer</div>
+                                    <div class="p-2 mb-2 bg-white rounded shadow-sm border-start border-3 border-secondary text-truncate fs-7">Lead React Developer</div>
+                                    <div class="p-2 mb-2 bg-white rounded shadow-sm border-start border-3 border-secondary text-truncate fs-7">UI/UX Designer</div>
+                                </div>
+                                <div class="col-md-9 ps-4">
+                                    <div class="d-flex align-items-center justify-content-between mb-4">
+                                        <h5 class="fw-bold m-0 text-truncate">AI Screening: Candidate Rankings</h5>
+                                        <span class="badge-status badge-shortlisted">Active Job</span>
+                                    </div>
+                                    <div class="table-responsive">
+                                        <table class="table table-hover align-middle border-0 m-0">
+                                            <thead>
+                                                <tr class="table-light">
+                                                    <th>Rank</th>
+                                                    <th>Candidate</th>
+                                                    <th>Skills Match</th>
+                                                    <th>Match Score</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td class="fw-bold text-dark">Dr. Aris Thorne</td>
+                                                    <td>
+                                                        <span class="skill-tag skill-match">Python</span>
+                                                        <span class="skill-tag skill-match">PyTorch</span>
+                                                        <span class="skill-tag skill-match">LLMs</span>
+                                                    </td>
+                                                    <td><span class="candidate-score-badge score-high small m-0" style="width:36px; height:36px; font-size:0.85rem">95%</span></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>2</td>
+                                                    <td class="fw-bold text-dark">Elena Rostova</td>
+                                                    <td>
+                                                        <span class="skill-tag skill-match">Python</span>
+                                                        <span class="skill-tag skill-match">Transformers</span>
+                                                        <span class="skill-tag skill-missing">LangChain</span>
+                                                    </td>
+                                                    <td><span class="candidate-score-badge score-high small m-0" style="width:36px; height:36px; font-size:0.85rem">88%</span></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- How It Works Section -->
+        <section id="how-it-works" class="py-5 bg-white border-top border-bottom">
+            <div class="container py-4">
+                <div class="text-center mb-5">
+                    <span class="feature-pill"><i class="fa-solid fa-route me-2"></i>Workflow</span>
+                    <h2 class="fw-bold text-dark">Recruiter Workflows Reimagined</h2>
+                    <p class="text-muted mx-auto" style="max-width: 600px;">How ApexScreen transforms manual CV review into a structured, automated ranking engine in 4 simple steps.</p>
+                </div>
+
+                <!-- Interactive Workflow Roadmap -->
+                <div class="row justify-content-center">
+                    <div class="col-lg-9">
+                        <div class="workflow-diagram">
+                            <div class="workflow-line"></div>
+                            
+                            <div class="workflow-node active" id="node-step1" onclick="showWorkflowDetail(1)">
+                                <i class="fa-solid fa-briefcase"></i>
+                                <span class="workflow-node-label">1. Create Job JD</span>
+                            </div>
+                            <div class="workflow-node" id="node-step2" onclick="showWorkflowDetail(2)">
+                                <i class="fa-solid fa-folder-open"></i>
+                                <span class="workflow-node-label">2. Bulk Upload</span>
+                            </div>
+                            <div class="workflow-node" id="node-step3" onclick="showWorkflowDetail(3)">
+                                <i class="fa-solid fa-gears"></i>
+                                <span class="workflow-node-label">3. AI Screen</span>
+                            </div>
+                            <div class="workflow-node" id="node-step4" onclick="showWorkflowDetail(4)">
+                                <i class="fa-solid fa-medal"></i>
+                                <span class="workflow-node-label">4. Review & Rank</span>
+                            </div>
+                        </div>
+
+                        <!-- Workflow Text Details Panel -->
+                        <div class="card p-4 mt-5 shadow-sm text-center bg-light border-0">
+                            <h5 class="fw-bold text-dark" id="workflow-step-title">Step 1: Define Job & AI Rules</h5>
+                            <p class="text-muted m-0" id="workflow-step-desc">Create your target job details, entering required skills, preferred credentials, and experience rules. The screening AI uses these profiles as evaluation blueprints.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- AI/NLP Features Section -->
+        <section class="py-5 bg-light">
+            <div class="container py-3">
+                <div class="text-center mb-5">
+                    <span class="feature-pill"><i class="fa-solid fa-robot me-2"></i>AI Features</span>
+                    <h2 class="fw-bold text-dark">Explainable AI Recruiter Assistance</h2>
+                    <p class="text-muted mx-auto" style="max-width: 600px;">We use advanced NLP pipelines to analyze resumes objectively without black-box bias.</p>
+                </div>
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="card p-4 h-100 border-0 shadow-sm">
+                            <div class="d-flex align-items-center mb-3">
+                                <div class="p-3 bg-light rounded me-3 text-primary"><i class="fa-solid fa-spell-check fs-4"></i></div>
+                                <h5 class="fw-bold m-0">Text Extraction</h5>
+                            </div>
+                            <p class="text-muted small">Extract structured experience timelines, educational histories, and skill sets from PDF, DOCX, or zipped files instantly.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card p-4 h-100 border-0 shadow-sm">
+                            <div class="d-flex align-items-center mb-3">
+                                <div class="p-3 bg-light rounded me-3 text-secondary"><i class="fa-solid fa-object-group fs-4"></i></div>
+                                <h5 class="fw-bold m-0">JD-Resume Semantic Alignment</h5>
+                            </div>
+                            <p class="text-muted small">Go beyond keyword matching. The system evaluates synonyms, industry phrases, and skill levels against job requirements.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card p-4 h-100 border-0 shadow-sm">
+                            <div class="d-flex align-items-center mb-3">
+                                <div class="p-3 bg-light rounded me-3 text-warning"><i class="fa-solid fa-file-invoice fs-4"></i></div>
+                                <h5 class="fw-bold m-0">Explainable Screening Insights</h5>
+                            </div>
+                            <p class="text-muted small">Receive automated score breakdowns outlining matching skills, missing credentials, and specific alignment reasoning.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Benefits Section -->
+        <section class="py-5 bg-white border-top">
+            <div class="container py-3">
+                <div class="row align-items-center">
+                    <div class="col-md-6 mb-4 mb-md-0">
+                        <span class="feature-pill"><i class="fa-solid fa-award me-2"></i>Value Proposition</span>
+                        <h2 class="fw-bold text-dark">Accelerate Time-To-Interview by 75%</h2>
+                        <p class="text-muted">Avoid reading hundreds of irrelevant applications. Let the AI flag highly matched candidates, giving you details and insights in seconds.</p>
+                        <ul class="list-unstyled">
+                            <li class="mb-3 d-flex align-items-start gap-2"><i class="fa-solid fa-circle-check text-secondary mt-1"></i> <div><strong>Bulk ZIP Processing:</strong> Upload compressed resume folders and screen hundreds of CVs simultaneously.</div></li>
+                            <li class="mb-3 d-flex align-items-start gap-2"><i class="fa-solid fa-circle-check text-secondary mt-1"></i> <div><strong>Objective Evaluation:</strong> Filter applications based on pre-defined skills, experience, and educational constraints.</div></li>
+                            <li class="mb-3 d-flex align-items-start gap-2"><i class="fa-solid fa-circle-check text-secondary mt-1"></i> <div><strong>Company Workspace Isolation:</strong> Maintain separate project workspaces and data integrity for each active job post.</div></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6 text-center">
+                        <div class="p-4 bg-light rounded shadow-sm border border-2 border-primary-light">
+                            <div class="row g-3">
+                                <div class="col-6">
+                                    <div class="bg-white p-3 rounded shadow-sm text-center">
+                                        <h3 class="fw-bold text-primary m-0">10x</h3>
+                                        <span class="text-muted fs-8">Screening Speed</span>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="bg-white p-3 rounded shadow-sm text-center">
+                                        <h3 class="fw-bold text-secondary m-0">100%</h3>
+                                        <span class="text-muted fs-8">Workspace Isolation</span>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="bg-white p-3 rounded shadow-sm text-center">
+                                        <h3 class="fw-bold text-dark m-0">95%</h3>
+                                        <span class="text-muted fs-8">Score Accuracy</span>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="bg-white p-3 rounded shadow-sm text-center">
+                                        <h3 class="fw-bold text-warning m-0">0</h3>
+                                        <span class="text-muted fs-8">Manual CSV Worksets</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final CTA Section -->
+        <div class="py-5 text-center bg-light border-top">
+            <div class="container py-4">
+                <h3 class="fw-bold text-dark mb-3">Ready to simplify your resume screening process?</h3>
+                <p class="text-muted mx-auto mb-4" style="max-width: 500px;">Create a secure company workspace, customize your screening rules, and start uploading resumes today.</p>
+                <div class="d-flex justify-content-center gap-3">
+                    <button class="btn btn-primary btn-lg" onclick="showAuthView('signup')">Create Company Account</button>
+                    <button class="btn btn-outline-primary btn-lg" onclick="showAuthView('login')">Access Recruiter Portal</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="py-5 bg-white border-top">
+            <div class="container">
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <a class="navbar-brand landing-logo mb-3 d-inline-block" href="#">
+                            <i class="fa-solid fa-brain-circuit me-2"></i>Apex<span>Screen AI</span>
+                        </a>
+                        <p class="text-muted small">Modern AI recruitment SaaS built for HR teams. Automating CV parsing, structured credential analysis, and objective candidate rankings.</p>
+                    </div>
+                    <div class="col-md-2 col-6 offset-md-2">
+                        <h6 class="fw-bold mb-3 text-dark">Product</h6>
+                        <ul class="list-unstyled fs-8 text-muted">
+                            <li class="mb-2"><a href="#" onclick="showView('landing')" class="text-decoration-none text-muted">Features</a></li>
+                            <li class="mb-2"><a href="#" onclick="showView('landing')" class="text-decoration-none text-muted">How It Works</a></li>
+                            <li class="mb-2"><a href="#" onclick="showView('landing')" class="text-decoration-none text-muted">SaaS Dashboard</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-2 col-6">
+                        <h6 class="fw-bold mb-3 text-dark">Resources</h6>
+                        <ul class="list-unstyled fs-8 text-muted">
+                            <li class="mb-2"><a href="#" class="text-decoration-none text-muted">Terms of Use</a></li>
+                            <li class="mb-2"><a href="#" class="text-decoration-none text-muted">Privacy Policy</a></li>
+                            <li class="mb-2"><a href="#" class="text-decoration-none text-muted">Contact Support</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-2 col-6">
+                        <h6 class="fw-bold mb-3 text-dark">Account</h6>
+                        <ul class="list-unstyled fs-8 text-muted">
+                            <li class="mb-2"><a href="#" onclick="showAuthView('login')" class="text-decoration-none text-muted">Login</a></li>
+                            <li class="mb-2"><a href="#" onclick="showAuthView('signup')" class="text-decoration-none text-muted">Sign Up</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="border-top pt-4 mt-4 text-center">
+                    <span class="text-muted small">&copy; 2026 ApexScreen AI Solutions. All rights reserved. Made for recruiter teams.</span>
+                </div>
+            </div>
+        </footer>
+    </section>
+
+    <!-- =========================================================================
+         2. AUTHENTICATION VIEW CONTAINER (LOGIN / SIGN UP / FORGOT / VERIFICATION)
+         ========================================================================= -->
+    <section id="auth-view" class="view-section auth-container d-none">
+        
+        <!-- LOGIN SCREEN -->
+        <div id="auth-login-panel" class="auth-card d-none">
+            <div class="text-center mb-4">
+                <a class="landing-logo mb-2 d-inline-block text-decoration-none" href="#" onclick="showView('landing')">
+                    <i class="fa-solid fa-brain-circuit me-2"></i>Apex<span>Screen AI</span>
+                </a>
+                <h5 class="fw-bold text-dark m-0">Recruiter Login</h5>
+                <p class="text-muted small">Access your secure enterprise workspace</p>
+            </div>
+            
+            <form id="form-login" onsubmit="handleLogin(event)">
+                <div class="mb-3">
+                    <label class="form-label" for="login-email">Work Email</label>
+                    <input type="email" id="login-email" class="form-control" placeholder="name@company.com" required>
+                </div>
+                <div class="mb-3">
+                    <div class="d-flex justify-content-between align-items-center mb-1">
+                        <label class="form-label m-0" for="login-password">Password</label>
+                        <a href="#" class="text-decoration-none small text-primary fw-bold" onclick="showAuthPanel('forgot')">Forgot?</a>
+                    </div>
+                    <input type="password" id="login-password" class="form-control" placeholder="••••••••" required>
+                </div>
+                <div class="mb-3 form-check d-flex justify-content-between align-items-center">
+                    <div>
+                        <input type="checkbox" class="form-check-input" id="login-remember">
+                        <label class="form-check-label text-muted small" for="login-remember">Remember me</label>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary w-100 mb-3">Sign In</button>
+                
+                <div class="text-center mb-3">
+                    <span class="text-muted small text-uppercase">or</span>
+                </div>
+                
+                <button type="button" class="google-btn mb-4" onclick="simulateOAuth()">
+                    <img src="https://lh3.googleusercontent.com/COxitqgJr1sIC5exq78XX63tA5xzx52CSIodgKQ5YhK63g8jS0Gst9Dy1Dq653w6M995A-5X4=w400" alt="Google" width="18" height="18" style="object-fit: contain;">
+                    Continue with Google
+                </button>
+                
+                <div class="text-center">
+                    <span class="text-muted small">New to ApexScreen? <a href="#" class="text-decoration-none text-primary fw-bold" onclick="showAuthPanel('signup')">Create Account</a></span>
+                </div>
+            </form>
+        </div>
+
+        <!-- SIGN UP SCREEN -->
+        <div id="auth-signup-panel" class="auth-card d-none">
+            <div class="text-center mb-4">
+                <a class="landing-logo mb-2 d-inline-block text-decoration-none" href="#" onclick="showView('landing')">
+                    <i class="fa-solid fa-brain-circuit me-2"></i>Apex<span>Screen AI</span>
+                </a>
+                <h5 class="fw-bold text-dark m-0">Create Company Account</h5>
+                <p class="text-muted small">Set up an isolated workplace for your HR team</p>
+            </div>
+            
+            <form id="form-signup" onsubmit="handleSignup(event)">
+                <div class="mb-3">
+                    <label class="form-label" for="signup-name">Full Name</label>
+                    <input type="text" id="signup-name" class="form-control" placeholder="Jane Doe" required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="signup-company">Company Name</label>
+                    <input type="text" id="signup-company" class="form-control" placeholder="Apex AI Solutions" required>
+                </div>
+                <div class="row mb-3">
+                    <div class="col">
+                        <label class="form-label" for="signup-email">Work Email</label>
+                        <input type="email" id="signup-email" class="form-control" placeholder="jane@company.com" required>
+                    </div>
+                    <div class="col">
+                        <label class="form-label" for="signup-size">Company Size</label>
+                        <select id="signup-size" class="form-select" required>
+                            <option value="" disabled selected>Select size</option>
+                            <option value="1-10">1-10 employees</option>
+                            <option value="11-50">11-50 employees</option>
+                            <option value="50-100">50-100 employees</option>
+                            <option value="101-500">101-500 employees</option>
+                            <option value="500+">500+ employees</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="signup-password">Password</label>
+                    <input type="password" id="signup-password" class="form-control" placeholder="At least 8 characters" required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="signup-confirm-password">Confirm Password</label>
+                    <input type="password" id="signup-confirm-password" class="form-control" placeholder="Repeat password" required>
+                </div>
+                <div class="mb-3 form-check">
+                    <input type="checkbox" class="form-check-input" id="signup-terms" required>
+                    <label class="form-check-label text-muted small" for="signup-terms">I agree to the <a href="#" class="text-primary text-decoration-none">Terms of Service</a> & <a href="#" class="text-primary text-decoration-none">Privacy Policy</a></label>
+                </div>
+                
+                <button type="submit" class="btn btn-primary w-100 mb-3">Register Company Account</button>
+                
+                <div class="text-center">
+                    <span class="text-muted small">Already have an account? <a href="#" class="text-decoration-none text-primary fw-bold" onclick="showAuthPanel('login')">Sign In</a></span>
+                </div>
+            </form>
+        </div>
+
+        <!-- FORGOT PASSWORD SCREEN -->
+        <div id="auth-forgot-panel" class="auth-card d-none">
+            <div class="text-center mb-4">
+                <a class="landing-logo mb-2 d-inline-block text-decoration-none" href="#" onclick="showView('landing')">
+                    <i class="fa-solid fa-brain-circuit me-2"></i>Apex<span>Screen AI</span>
+                </a>
+                <h5 class="fw-bold text-dark m-0">Reset Password</h5>
+                <p class="text-muted small">Enter your work email address to receive reset instructions</p>
+            </div>
+            
+            <form id="form-forgot" onsubmit="handleForgot(event)">
+                <div class="mb-4">
+                    <label class="form-label" for="forgot-email">Work Email</label>
+                    <input type="email" id="forgot-email" class="form-control" placeholder="name@company.com" required>
+                </div>
+                
+                <button type="submit" class="btn btn-primary w-100 mb-3">Send Reset Instructions</button>
+                
+                <div class="text-center">
+                    <a href="#" class="text-decoration-none text-primary fw-bold small" onclick="showAuthPanel('login')">Return to Login</a>
+                </div>
+            </form>
+        </div>
+
+        <!-- EMAIL SENT CONFIRMATION -->
+        <div id="auth-sent-panel" class="auth-card d-none text-center">
+            <a class="landing-logo mb-3 d-inline-block text-decoration-none" href="#" onclick="showView('landing')">
+                <i class="fa-solid fa-brain-circuit me-2"></i>Apex<span>Screen AI</span>
+            </a>
+            <div class="p-3 bg-light rounded-circle d-inline-flex align-items-center justify-content-center text-primary mb-4" style="width: 72px; height: 72px;">
+                <i class="fa-solid fa-paper-plane fs-2"></i>
+            </div>
+            <h5 class="fw-bold text-dark mb-2">Check Your Email</h5>
+            <p class="text-muted small mb-4">We've sent password reset instructions to <span id="sent-email-placeholder" class="fw-bold text-dark">your work email</span> if an account exists.</p>
+            <button class="btn btn-primary w-100 mb-3" onclick="showAuthPanel('login')">Back to Login</button>
+        </div>
+
+        <!-- EMAIL VERIFICATION FLOW -->
+        <div id="auth-verify-panel" class="auth-card d-none text-center">
+            <a class="landing-logo mb-3 d-inline-block text-decoration-none" href="#" onclick="showView('landing')">
+                <i class="fa-solid fa-brain-circuit me-2"></i>Apex<span>Screen AI</span>
+            </a>
+            <div class="p-3 bg-light rounded-circle d-inline-flex align-items-center justify-content-center text-secondary mb-4" style="width: 72px; height: 72px;">
+                <i class="fa-solid fa-envelope-open-text fs-2"></i>
+            </div>
+            <h5 class="fw-bold text-dark mb-2">Verify Your Email</h5>
+            <p class="text-muted small mb-4">We have sent a 6-digit confirmation code to your work email. Please enter it below to complete registration.</p>
+            
+            <form id="form-verify" onsubmit="handleVerification(event)">
+                <div class="d-flex justify-content-center gap-2 mb-4">
+                    <input type="text" class="form-control text-center fs-4 fw-bold" style="width: 48px; height: 48px;" maxlength="1" required>
+                    <input type="text" class="form-control text-center fs-4 fw-bold" style="width: 48px; height: 48px;" maxlength="1" required>
+                    <input type="text" class="form-control text-center fs-4 fw-bold" style="width: 48px; height: 48px;" maxlength="1" required>
+                    <input type="text" class="form-control text-center fs-4 fw-bold" style="width: 48px; height: 48px;" maxlength="1" required>
+                    <input type="text" class="form-control text-center fs-4 fw-bold" style="width: 48px; height: 48px;" maxlength="1" required>
+                    <input type="text" class="form-control text-center fs-4 fw-bold" style="width: 48px; height: 48px;" maxlength="1" required>
+                </div>
+                <button type="submit" class="btn btn-primary w-100 mb-3">Verify Code & Access Portal</button>
+                <div class="text-center">
+                    <a href="#" class="text-decoration-none text-muted small" onclick="showToast('New verification code sent')">Resend Code</a>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- =========================================================================
+         3. RECRUITER DASHBOARD VIEW (AUTHENTICATED SESSION)
+         ========================================================================= -->
+    <section id="dashboard-view" class="view-section dashboard-wrapper d-none">
+        
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-brand">
+                <a class="navbar-brand landing-logo text-decoration-none" href="#">
+                    <i class="fa-solid fa-brain-circuit me-2"></i>Apex<span>Screen AI</span>
+                </a>
+            </div>
+            
+            <ul class="sidebar-menu">
+                <li class="sidebar-item">
+                    <a href="#" class="sidebar-link active" id="side-overview" onclick="switchDashboardTab('overview')">
+                        <i class="fa-solid fa-chart-line"></i>Dashboard
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="#" class="sidebar-link" id="side-jobs" onclick="switchDashboardTab('jobs')">
+                        <i class="fa-solid fa-briefcase"></i>Jobs
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="#" class="sidebar-link" id="side-candidates" onclick="switchDashboardTab('candidates')">
+                        <i class="fa-solid fa-users"></i>Candidates
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="#" class="sidebar-link" id="side-resumes" onclick="switchDashboardTab('resumes')">
+                        <i class="fa-solid fa-file-text"></i>Resumes
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="#" class="sidebar-link" id="side-analytics" onclick="switchDashboardTab('analytics')">
+                        <i class="fa-solid fa-chart-pie"></i>Analytics
+                    </a>
+                </li>
+                <li class="sidebar-item border-top my-2 pt-2">
+                    <a href="#" class="sidebar-link" id="side-settings" onclick="switchDashboardTab('settings')">
+                        <i class="fa-solid fa-sliders"></i>Settings
+                    </a>
+                </li>
+            </ul>
+            
+            <!-- Recruiter Profile Footer in Sidebar -->
+            <div class="p-3 border-top bg-light">
+                <div class="d-flex align-items-center gap-2">
+                    <div class="p-2 bg-primary-light rounded-circle text-dark d-flex align-items-center justify-content-center fw-bold" style="width:36px; height:36px; background-color: var(--brand-primary-light);" id="user-avatar-placeholder">JD</div>
+                    <div class="text-truncate flex-grow-1">
+                        <h6 class="fw-bold text-dark m-0 fs-7" id="sidebar-recruiter-name">Jane Doe</h6>
+                        <span class="text-muted fs-8" id="sidebar-recruiter-company">Apex AI Solutions</span>
+                    </div>
+                    <a href="#" class="text-muted fs-6" onclick="handleLogout()" title="Logout"><i class="fa-solid fa-sign-out-alt"></i></a>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            
+            <!-- Top navbar -->
+            <header class="top-navbar">
+                <div class="d-flex align-items-center gap-3">
+                    <button class="toggle-sidebar-btn" onclick="toggleSidebar()"><i class="fa-solid fa-bars"></i></button>
+                    <div class="search-wrapper">
+                        <i class="fa-solid fa-search"></i>
+                        <input type="text" class="form-control" placeholder="Search profiles, resumes..." onkeyup="handleGlobalSearch(event)">
+                    </div>
+                </div>
+                
+                <div class="topbar-nav">
+                    <!-- Notification Bell Dropdown -->
+                    <div class="dropdown">
+                        <button class="icon-badge-btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" id="notificationsDropdown">
+                            <i class="fa-regular fa-bell"></i>
+                            <span class="badge-dot"></span>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end p-2 shadow-lg border-color fs-7" style="width: 280px;" aria-labelledby="notificationsDropdown">
+                            <li class="dropdown-header fw-bold border-bottom pb-2">Notifications</li>
+                            <li><a class="dropdown-item py-2 border-bottom" href="#"><i class="fa-solid fa-sparkles text-primary me-2"></i>Screening complete: 6 candidates ranked for ML Engineer</a></li>
+                            <li><a class="dropdown-item py-2 border-bottom" href="#"><i class="fa-solid fa-plus text-secondary me-2"></i>New job post created: UX Designer</a></li>
+                            <li><a class="dropdown-item py-2 text-center text-primary fw-bold" href="#">Clear All</a></li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Company Data Isolation Indicator -->
+                    <div class="d-flex align-items-center gap-2 border-start ps-3">
+                        <span class="badge bg-light text-dark border p-2 fw-semibold fs-8"><i class="fa-solid fa-shield-halved text-success me-1"></i> Private Workspace</span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- ==============================================
+                 TAB VIEWS CONTAINER
+                 ============================================== -->
+            <div class="p-4 flex-grow-1">
+
+                <!-- 3.1 OVERVIEW TAB -->
+                <div id="tab-overview" class="tab-pane-view">
+                    <div class="d-flex align-items-center justify-content-between mb-4">
+                        <div>
+                            <h4 class="fw-bold m-0 text-dark">Recruitment Overview</h4>
+                            <p class="text-muted small m-0">Apex AI Solutions isolated workspace analytics</p>
+                        </div>
+                        <button class="btn btn-primary" onclick="switchDashboardTab('create-job')"><i class="fa-solid fa-plus me-2"></i>Post New Job</button>
+                    </div>
+
+                    <!-- Metric Cards Row -->
+                    <div class="row g-3 mb-4">
+                        <div class="col-md-3">
+                            <div class="metric-card">
+                                <div>
+                                    <span class="text-muted fs-8 fw-semibold">ACTIVE JOBS</span>
+                                    <h3 class="fw-bold text-dark m-0 mt-1" id="metric-active-jobs">3</h3>
+                                </div>
+                                <div class="metric-icon-box metric-icon-primary"><i class="fa-solid fa-briefcase"></i></div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="metric-card">
+                                <div>
+                                    <span class="text-muted fs-8 fw-semibold">TOTAL APPLICANTS</span>
+                                    <h3 class="fw-bold text-dark m-0 mt-1" id="metric-total-applicants">13</h3>
+                                </div>
+                                <div class="metric-icon-box metric-icon-secondary"><i class="fa-solid fa-users"></i></div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="metric-card">
+                                <div>
+                                    <span class="text-muted fs-8 fw-semibold">SHORTLISTED</span>
+                                    <h3 class="fw-bold text-dark m-0 mt-1" id="metric-shortlisted">4</h3>
+                                </div>
+                                <div class="metric-icon-box metric-icon-primary" style="background-color: rgba(144,158,132,0.1); color: var(--brand-secondary);"><i class="fa-solid fa-medal"></i></div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="metric-card">
+                                <div>
+                                    <span class="text-muted fs-8 fw-semibold">AVG MATCH SCORE</span>
+                                    <h3 class="fw-bold text-dark m-0 mt-1" id="metric-avg-score">82%</h3>
+                                </div>
+                                <div class="metric-icon-box metric-icon-yellow"><i class="fa-solid fa-chart-simple"></i></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Analytics Charts Row -->
+                    <div class="row g-4 mb-4">
+                        <div class="col-lg-6">
+                            <div class="card p-4">
+                                <h6 class="fw-bold text-dark mb-3">Applicants by Job Post</h6>
+                                <div style="height: 220px; position: relative;">
+                                    <canvas id="chart-job-applicants"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="card p-4">
+                                <h6 class="fw-bold text-dark mb-3">Global Screening Match Distribution</h6>
+                                <div style="height: 220px; position: relative;">
+                                    <canvas id="chart-score-distribution"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Recent Activity Section -->
+                    <div class="card p-4">
+                        <h6 class="fw-bold text-dark mb-3">Recent Pipeline Activity</h6>
+                        <div class="table-responsive">
+                            <table class="table table-hover align-middle m-0 fs-7">
+                                <thead>
+                                    <tr class="table-light text-muted">
+                                        <th>Date</th>
+                                        <th>Activity Details</th>
+                                        <th>Associated Job</th>
+                                        <th>Action Taken</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>2026-08-26</td>
+                                        <td><span class="fw-semibold">Dr. Aris Thorne</span> was Shortlisted by screening algorithm.</td>
+                                        <td class="fw-bold">Senior AI/ML Engineer</td>
+                                        <td><span class="badge bg-success-subtle text-success p-1 rounded fs-9">Score: 95%</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>2026-08-26</td>
+                                        <td>ZIP Folder (5 files) parsed and text extracted.</td>
+                                        <td class="fw-bold">Lead React Developer</td>
+                                        <td><span class="badge bg-secondary-subtle text-secondary p-1 rounded fs-9">Bulk Action</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>2026-08-25</td>
+                                        <td>New screening constraints defined for applicant educational levels.</td>
+                                        <td class="fw-bold">Product Designer (UI/UX)</td>
+                                        <td><span class="badge bg-warning-subtle text-warning p-1 rounded fs-9">Update Settings</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3.2 JOBS TAB -->
+                <div id="tab-jobs" class="tab-pane-view d-none">
+                    <div class="d-flex align-items-center justify-content-between mb-4">
+                        <div>
+                            <h4 class="fw-bold text-dark m-0">Company Job Openings</h4>
+                            <p class="text-muted small m-0">Create new descriptions and access workspace screening directories.</p>
+                        </div>
+                        <button class="btn btn-primary" onclick="switchDashboardTab('create-job')"><i class="fa-solid fa-plus me-2"></i>Create Job Posting</button>
+                    </div>
+
+                    <div class="card p-4">
+                        <div class="table-responsive">
+                            <table class="table table-hover align-middle m-0" id="table-jobs-list">
+                                <thead>
+                                    <tr class="table-light">
+                                        <th>Job Details</th>
+                                        <th>Department</th>
+                                        <th>Location</th>
+                                        <th>Screened Applicants</th>
+                                        <th>Status</th>
+                                        <th>Created Date</th>
+                                        <th class="text-end">Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- Populated dynamically via app.js -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3.3 CREATE JOB TAB -->
+                <div id="tab-create-job" class="tab-pane-view d-none">
+                    <div class="mb-4">
+                        <h4 class="fw-bold text-dark m-0">Post New Job Requirement</h4>
+                        <p class="text-muted small m-0">Create a job profile that the AI will use to match uploaded resumes.</p>
+                    </div>
+
+                    <div class="card p-4" style="max-width: 800px;">
+                        <form id="form-create-job" onsubmit="handleCreateJob(event)">
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <label class="form-label" for="job-title-input">Job Title</label>
+                                    <input type="text" id="job-title-input" class="form-control" placeholder="e.g. Senior Backend Engineer" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label" for="job-dept-input">Department</label>
+                                    <select id="job-dept-input" class="form-select" required>
+                                        <option value="" disabled selected>Select department</option>
+                                        <option value="Engineering">Engineering</option>
+                                        <option value="Frontend">Frontend</option>
+                                        <option value="Backend">Backend</option>
+                                        <option value="Design">Design</option>
+                                        <option value="Product">Product</option>
+                                        <option value="Operations">Operations</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <label class="form-label" for="job-loc-input">Location</label>
+                                    <input type="text" id="job-loc-input" class="form-control" placeholder="e.g. San Francisco, CA (Hybrid)" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label" for="job-type-input">Employment Type</label>
+                                    <select id="job-type-input" class="form-select" required>
+                                        <option value="Full-time">Full-time</option>
+                                        <option value="Part-time">Part-time</option>
+                                        <option value="Contract">Contract</option>
+                                        <option value="Remote">Remote</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label" for="job-desc-input">Job Description</label>
+                                <textarea id="job-desc-input" class="form-control" rows="4" placeholder="Describe the responsibilities, project scope, and daily tasks..." required></textarea>
+                            </div>
+
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <label class="form-label" for="job-reqskills-input">Required Skills (Comma separated)</label>
+                                    <input type="text" id="job-reqskills-input" class="form-control" placeholder="Python, SQL, Django, Git" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label" for="job-prefskills-input">Preferred Skills (Comma separated)</label>
+                                    <input type="text" id="job-prefskills-input" class="form-control" placeholder="Docker, Kubernetes, AWS">
+                                </div>
+                            </div>
+
+                            <div class="row mb-4">
+                                <div class="col-md-4">
+                                    <label class="form-label" for="job-exp-input">Min Experience (Years)</label>
+                                    <input type="number" id="job-exp-input" class="form-control" min="0" value="3" required>
+                                </div>
+                                <div class="col-md-8">
+                                    <label class="form-label" for="job-edu-input">Education Requirements</label>
+                                    <input type="text" id="job-edu-input" class="form-control" placeholder="e.g. Bachelor's in CS, Engineering or related field" required>
+                                </div>
+                            </div>
+
+                            <div class="mb-4">
+                                <label class="form-label" for="job-rules-input">Other Screening / Parsing Rules</label>
+                                <input type="text" id="job-rules-input" class="form-control" placeholder="e.g. Must have cloud developer certifications">
+                            </div>
+
+                            <div class="d-flex gap-3 justify-content-end border-top pt-3">
+                                <button type="button" class="btn btn-outline-primary" onclick="switchDashboardTab('jobs')">Cancel</button>
+                                <button type="submit" class="btn btn-primary">Create Job Profile</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- 3.4 JOB-SPECIFIC WORKSPACE TAB -->
+                <div id="tab-job-workspace" class="tab-pane-view d-none">
+                    <!-- Workspace Header (populated by app.js) -->
+                    <div class="card border-0 rounded-0 bg-transparent mb-4">
+                        <div class="d-flex flex-wrap align-items-center justify-content-between gap-3 border-bottom pb-3">
+                            <div>
+                                <span class="text-muted fs-8 fw-bold text-uppercase" id="workspace-job-dept">Frontend Department</span>
+                                <h4 class="fw-bold text-dark m-0" id="workspace-job-title">Lead React Developer</h4>
+                                <span class="text-muted small" id="workspace-job-location"><i class="fa-solid fa-map-pin me-2"></i>Remote (US)</span>
+                            </div>
+                            <div class="d-flex align-items-center gap-2">
+                                <button class="btn btn-outline-primary" onclick="switchDashboardTab('jobs')"><i class="fa-solid fa-arrow-left me-2"></i>All Jobs</button>
+                                <button class="btn btn-primary" onclick="switchWorkspaceSubTab('upload')"><i class="fa-solid fa-upload me-2"></i>Upload Resumes</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Inner Workspace Navigation Tabs -->
+                    <div class="workspace-tabs mb-4">
+                        <button class="workspace-tab-btn active" id="wstab-details" onclick="switchWorkspaceSubTab('details')">Job Details</button>
+                        <button class="workspace-tab-btn" id="wstab-upload" onclick="switchWorkspaceSubTab('upload')">Bulk Upload</button>
+                        <button class="workspace-tab-btn" id="wstab-screening" onclick="switchWorkspaceSubTab('screening')">AI Screening</button>
+                        <button class="workspace-tab-btn" id="wstab-ranking" onclick="switchWorkspaceSubTab('ranking')">Candidate Ranking</button>
+                        <button class="workspace-tab-btn" id="wstab-analytics" onclick="switchWorkspaceSubTab('analytics')">Workspace Analytics</button>
+                    </div>
+
+                    <!-- Workspace Views Content -->
+                    <div id="workspace-sub-content">
+                        
+                        <!-- A. JOB DETAILS VIEW -->
+                        <div id="wsview-details" class="ws-pane-view">
+                            <div class="row g-4">
+                                <div class="col-lg-8">
+                                    <div class="card p-4 mb-4">
+                                        <h5 class="fw-bold mb-3">Job Description</h5>
+                                        <p id="ws-details-desc">Details regarding the role profile...</p>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="card p-4">
+                                        <h5 class="fw-bold mb-3 text-dark">Screening Blueprint</h5>
+                                        <div class="mb-3">
+                                            <span class="text-muted small fw-bold text-uppercase d-block">Required Skills</span>
+                                            <div id="ws-details-reqskills" class="mt-1">
+                                                <!-- Populated dynamically -->
+                                            </div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <span class="text-muted small fw-bold text-uppercase d-block">Preferred Skills</span>
+                                            <div id="ws-details-prefskills" class="mt-1">
+                                                <!-- Populated dynamically -->
+                                            </div>
+                                        </div>
+                                        <div class="mb-3 border-top pt-2">
+                                            <span class="text-muted small fw-bold text-uppercase d-block">Minimum Experience</span>
+                                            <p class="m-0 fw-bold text-dark" id="ws-details-exp">5 years</p>
+                                        </div>
+                                        <div class="mb-3">
+                                            <span class="text-muted small fw-bold text-uppercase d-block">Education Requirement</span>
+                                            <p class="m-0 fw-bold text-dark" id="ws-details-edu">Master's in CS</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- B. BULK UPLOAD VIEW -->
+                        <div id="wsview-upload" class="ws-pane-view d-none">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <div class="card p-4 text-center mb-4">
+                                        <!-- Drag and Drop Box -->
+                                        <div class="upload-dropzone" id="drop-zone" onclick="triggerFilePicker()">
+                                            <input type="file" id="file-picker" multiple accept=".pdf,.docx,.zip" style="display: none;" onchange="handleFileSelection(event)">
+                                            <div class="upload-icon-circle"><i class="fa-solid fa-cloud-arrow-up"></i></div>
+                                            <h5 class="fw-bold text-dark">Drag Resumes Here</h5>
+                                            <p class="text-muted small mb-2">Supports PDF, DOCX, or ZIP folders containing multiple files.</p>
+                                            <button class="btn btn-outline-primary btn-sm">Browse Files</button>
+                                        </div>
+                                    </div>
+
+                                    <!-- Upload Queue List -->
+                                    <div class="card p-4 d-none" id="upload-queue-card">
+                                        <div class="d-flex align-items-center justify-content-between mb-3 border-bottom pb-2">
+                                            <h6 class="fw-bold text-dark m-0">Selected Files (<span id="upload-file-count">0</span>)</h6>
+                                            <button class="btn btn-accent btn-sm" onclick="clearUploadQueue()"><i class="fa-solid fa-trash me-2"></i>Clear Queue</button>
+                                        </div>
+                                        <div id="upload-files-list">
+                                            <!-- Dynamically injected files -->
+                                        </div>
+                                        <div class="text-end mt-4">
+                                            <button class="btn btn-primary" id="btn-start-screening" onclick="triggerAISimulator()"><i class="fa-solid fa-robot me-2"></i>Start AI Screening</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- C. AI SCREENING SIMULATOR -->
+                        <div id="wsview-screening" class="ws-pane-view d-none">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-7">
+                                    <div class="card p-5 text-center">
+                                        <h5 class="fw-bold mb-2">Analyzing Candidate Worksets</h5>
+                                        <p class="text-muted small mb-4">The screening engine is parsing files and matching credentials against the JD constraints.</p>
+                                        
+                                        <!-- Interactive Progress Checklist -->
+                                        <div class="text-start bg-light p-4 rounded mb-4">
+                                            <ul class="screening-steps-list">
+                                                <li class="screening-step-item" id="step-upload">
+                                                    <div class="step-indicator-icon step-running" id="step-upload-icon"><i class="fa-solid fa-circle-notch fa-spin"></i></div>
+                                                    <div>
+                                                        <h6 class="fw-bold text-dark m-0 fs-7">Uploading and validating files</h6>
+                                                        <span class="text-muted fs-8" id="step-upload-desc">Buffering files to memory...</span>
+                                                    </div>
+                                                </li>
+                                                <li class="screening-step-item" id="step-extract">
+                                                    <div class="step-indicator-icon step-pending" id="step-extract-icon">2</div>
+                                                    <div>
+                                                        <h6 class="fw-bold text-dark m-0 fs-7">Extracting resume text contents</h6>
+                                                        <span class="text-muted fs-8">NLP raw-string extraction...</span>
+                                                    </div>
+                                                </li>
+                                                <li class="screening-step-item" id="step-profile">
+                                                    <div class="step-indicator-icon step-pending" id="step-profile-icon">3</div>
+                                                    <div>
+                                                        <h6 class="fw-bold text-dark m-0 fs-7">Analyzing candidate experience profiles</h6>
+                                                        <span class="text-muted fs-8">Compiling job timelines & titles...</span>
+                                                    </div>
+                                                </li>
+                                                <li class="screening-step-item" id="step-match">
+                                                    <div class="step-indicator-icon step-pending" id="step-match-icon">4</div>
+                                                    <div>
+                                                        <h6 class="fw-bold text-dark m-0 fs-7">Comparing against job descriptions</h6>
+                                                        <span class="text-muted fs-8">Evaluating skill alignment...</span>
+                                                    </div>
+                                                </li>
+                                                <li class="screening-step-item" id="step-score">
+                                                    <div class="step-indicator-icon step-pending" id="step-score-icon">5</div>
+                                                    <div>
+                                                        <h6 class="fw-bold text-dark m-0 fs-7">Calculating candidate match scores</h6>
+                                                        <span class="text-muted fs-8">Generating weight matrices...</span>
+                                                    </div>
+                                                </li>
+                                                <li class="screening-step-item" id="step-rank">
+                                                    <div class="step-indicator-icon step-pending" id="step-rank-icon">6</div>
+                                                    <div>
+                                                        <h6 class="fw-bold text-dark m-0 fs-7">Generating rankings and reports</h6>
+                                                        <span class="text-muted fs-8">Finalizing scores & alignments...</span>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+
+                                        <div class="d-flex align-items-center justify-content-center gap-3">
+                                            <div class="spinner-border text-primary spinner-border-sm" role="status" id="screening-global-spinner"></div>
+                                            <span class="text-muted fw-bold small" id="screening-progress-txt">Processing: Step 1 of 6</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- D. CANDIDATE RANKING TABLE -->
+                        <div id="wsview-ranking" class="ws-pane-view d-none">
+                            <!-- Filters & Search Toolbar -->
+                            <div class="card p-3 mb-4">
+                                <div class="row g-3 align-items-center">
+                                    <div class="col-md-3">
+                                        <div class="position-relative">
+                                            <i class="fa-solid fa-magnifying-glass position-absolute text-muted" style="left: 12px; top: 50%; transform: translateY(-50%);"></i>
+                                            <input type="text" class="form-control ps-5" placeholder="Search applicant..." id="filter-rank-search" oninput="applyRankingFilters()">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <select class="form-select" id="filter-rank-status" onchange="applyRankingFilters()">
+                                            <option value="All">All Statuses</option>
+                                            <option value="Shortlisted">Shortlisted Only</option>
+                                            <option value="Under Review">Under Review</option>
+                                            <option value="Rejected">Rejected</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="d-flex align-items-center gap-3 bg-light p-1 px-3 rounded border">
+                                            <span class="text-muted fs-8 fw-bold text-nowrap">Min Score:</span>
+                                            <input type="range" class="form-range" min="0" max="100" value="0" id="filter-rank-score" oninput="updateScoreRangeLabel(this.value)">
+                                            <span id="label-range-score" class="fw-bold fs-7 text-dark text-nowrap">0%</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2 text-end">
+                                        <button class="btn btn-outline-primary btn-sm w-100" onclick="resetRankingFilters()">Reset Filters</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Ranking Table -->
+                            <div class="card p-4">
+                                <div class="table-responsive">
+                                    <table class="table table-hover align-middle m-0" id="table-candidates-ranking">
+                                        <thead>
+                                            <tr class="table-light">
+                                                <th>Rank</th>
+                                                <th>Candidate Details</th>
+                                                <th>Match Score</th>
+                                                <th>Experience Alignment</th>
+                                                <th>Educational Level</th>
+                                                <th>Applicant Status</th>
+                                                <th class="text-end">Assessment Actions</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <!-- Dynamically injected ranking rows -->
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- E. WORKSPACE ANALYTICS -->
+                        <div id="wsview-analytics" class="ws-pane-view d-none">
+                            <div class="row g-4">
+                                <div class="col-lg-6">
+                                    <div class="card p-4">
+                                        <h6 class="fw-bold mb-3 text-dark">Keyword & Skills Frequency</h6>
+                                        <div style="height: 250px; position: relative;">
+                                            <canvas id="chart-job-skills"></canvas>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="card p-4">
+                                        <h6 class="fw-bold mb-3 text-dark">Candidate Fit Spread</h6>
+                                        <div style="height: 250px; position: relative;">
+                                            <canvas id="chart-job-score-spread"></canvas>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- F. CANDIDATE DEEP VIEW PROFILE -->
+                        <div id="wsview-candidate-detail" class="ws-pane-view d-none">
+                            <!-- Detail Header Card -->
+                            <div class="card p-4 mb-4 border-0 rounded-0 bg-transparent border-bottom">
+                                <div class="d-flex flex-wrap align-items-center justify-content-between gap-3">
+                                    <div class="d-flex align-items-center gap-3">
+                                        <button class="btn btn-outline-primary btn-sm" onclick="switchWorkspaceSubTab('ranking')"><i class="fa-solid fa-arrow-left"></i></button>
+                                        <div>
+                                            <h4 class="fw-bold text-dark m-0" id="cand-detail-name">Dr. Aris Thorne</h4>
+                                            <span class="text-muted small" id="cand-detail-contact">aris.thorne@mlresearch.io | +1 (555) 321-7890</span>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex align-items-center gap-3">
+                                        <div>
+                                            <select class="form-select form-select-sm" id="cand-detail-status-select" onchange="changeCandidateStatusFromDetail(this.value)">
+                                                <option value="Shortlisted">Shortlisted</option>
+                                                <option value="Under Review">Under Review</option>
+                                                <option value="Rejected">Rejected</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row g-4">
+                                <!-- Scoring Breakdown & AI Summary -->
+                                <div class="col-lg-4">
+                                    <div class="card p-4 mb-4 text-center">
+                                        <h6 class="fw-bold text-muted mb-2 fs-8 uppercase">AI MATCH SCORE</h6>
+                                        <div class="d-flex justify-content-center mb-3">
+                                            <div class="candidate-score-badge score-high" style="width: 100px; height: 100px; font-size: 2.25rem;" id="cand-detail-score">95%</div>
+                                        </div>
+                                        
+                                        <div class="row g-2 border-top pt-3 text-start">
+                                            <div class="col-4 text-center border-end">
+                                                <span class="text-muted fs-9 d-block">Skills</span>
+                                                <strong class="text-dark fs-7" id="cand-detail-score-skills">98%</strong>
+                                            </div>
+                                            <div class="col-4 text-center border-end">
+                                                <span class="text-muted fs-9 d-block">Experience</span>
+                                                <strong class="text-dark fs-7" id="cand-detail-score-exp">95%</strong>
+                                            </div>
+                                            <div class="col-4 text-center">
+                                                <span class="text-muted fs-9 d-block">Education</span>
+                                                <strong class="text-dark fs-7" id="cand-detail-score-edu">90%</strong>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- AI Analysis Explanations -->
+                                    <div class="card p-4 bg-white">
+                                        <h5 class="fw-bold mb-3 text-dark"><i class="fa-solid fa-sparkles text-primary me-2"></i>AI Screening Insight</h5>
+                                        <p class="text-muted small" style="line-height: 1.6; text-align: justify;" id="cand-detail-ai-summary">Aris represents a strong fit. He meets all mandatory skill conditions...</p>
+                                    </div>
+                                </div>
+
+                                <!-- Timeline, Skills & Projects -->
+                                <div class="col-lg-8">
+                                    <!-- Skill Mapping Panel -->
+                                    <div class="card p-4 mb-4">
+                                        <h5 class="fw-bold mb-3">Skills Mapping</h5>
+                                        <div class="row g-3">
+                                            <div class="col-md-6 border-end">
+                                                <div class="insight-header">Matching Skills</div>
+                                                <div id="cand-detail-skills-matching">
+                                                    <!-- Dynamic tags -->
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 ps-md-3">
+                                                <div class="insight-header">Missing / Discrepant Skills</div>
+                                                <div id="cand-detail-skills-missing">
+                                                    <!-- Dynamic tags -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- CV Timeline -->
+                                    <div class="card p-4 mb-4">
+                                        <h5 class="fw-bold mb-3">Work Experience</h5>
+                                        <div id="cand-detail-experience-timeline">
+                                            <!-- Experience nodes -->
+                                        </div>
+                                    </div>
+
+                                    <!-- Projects & Education -->
+                                    <div class="card p-4">
+                                        <div class="row g-3">
+                                            <div class="col-md-6 border-end">
+                                                <h5 class="fw-bold mb-3">Education</h5>
+                                                <p class="text-dark fs-7 mb-2"><i class="fa-solid fa-graduation-cap text-secondary me-2"></i><span id="cand-detail-education-txt">M.S. in CS - Stanford</span></p>
+                                            </div>
+                                            <div class="col-md-6 ps-md-3">
+                                                <h5 class="fw-bold mb-3">Projects & Certs</h5>
+                                                <div id="cand-detail-projects">
+                                                    <!-- Project elements -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- 3.5 GLOBAL CANDIDATES TAB -->
+                <div id="tab-candidates" class="tab-pane-view d-none">
+                    <div class="d-flex align-items-center justify-content-between mb-4">
+                        <div>
+                            <h4 class="fw-bold text-dark m-0">Global Candidate Index</h4>
+                            <p class="text-muted small m-0">Cross-reference applicants across all open company vacancies.</p>
+                        </div>
+                    </div>
+
+                    <div class="card p-4">
+                        <div class="table-responsive">
+                            <table class="table table-hover align-middle m-0" id="table-global-candidates">
+                                <thead>
+                                    <tr class="table-light">
+                                        <th>Applicant Name</th>
+                                        <th>Target Job Position</th>
+                                        <th>Overall Score</th>
+                                        <th>Primary Email</th>
+                                        <th>Status</th>
+                                        <th class="text-end">Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- Dynamic rows -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3.6 GLOBAL RESUMES TAB -->
+                <div id="tab-resumes" class="tab-pane-view d-none">
+                    <div class="d-flex align-items-center justify-content-between mb-4">
+                        <div>
+                            <h4 class="fw-bold text-dark m-0">Repository Resumes</h4>
+                            <p class="text-muted small m-0">Listing all extracted document logs.</p>
+                        </div>
+                    </div>
+
+                    <div class="card p-4">
+                        <div class="table-responsive">
+                            <table class="table table-hover align-middle m-0" id="table-resumes-repository">
+                                <thead>
+                                    <tr class="table-light">
+                                        <th>File Name</th>
+                                        <th>Associated Job</th>
+                                        <th>File Size</th>
+                                        <th>Verification Status</th>
+                                        <th>Extracted Date</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- Dynamically filled -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3.7 GLOBAL ANALYTICS TAB -->
+                <div id="tab-analytics" class="tab-pane-view d-none">
+                    <div class="mb-4">
+                        <h4 class="fw-bold text-dark m-0">Recruitment Analytics</h4>
+                        <p class="text-muted small m-0">Aggregate screening performance charts and pipeline KPIs.</p>
+                    </div>
+
+                    <div class="row g-4">
+                        <div class="col-md-4">
+                            <div class="card p-4 h-100">
+                                <h6 class="fw-bold text-dark mb-3">Recruitment Funnel Pipeline</h6>
+                                <div style="height: 240px; position: relative;">
+                                    <canvas id="chart-pipeline-funnel"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card p-4 h-100">
+                                <h6 class="fw-bold text-dark mb-3">Applicant Distribution & Averages</h6>
+                                <p class="text-muted small">This chart evaluates matching score aggregates across the current active catalog.</p>
+                                <div style="height: 200px; position: relative;">
+                                    <canvas id="chart-global-score-spread-alternative"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3.8 SETTINGS TAB -->
+                <div id="tab-settings" class="tab-pane-view d-none">
+                    <div class="mb-4">
+                        <h4 class="fw-bold text-dark m-0">Workspace Settings</h4>
+                        <p class="text-muted small m-0">Manage security details and candidate screening evaluation weights.</p>
+                    </div>
+
+                    <div class="row g-4" style="max-width: 900px;">
+                        <div class="col-md-4">
+                            <div class="list-group shadow-sm" id="settings-menu-tabs">
+                                <a href="#" class="list-group-item list-group-item-action active" onclick="switchSettingsSection('profile')">Recruiter Profile</a>
+                                <a href="#" class="list-group-item list-group-item-action" onclick="switchSettingsSection('weights')">AI Match Weighting</a>
+                                <a href="#" class="list-group-item list-group-item-action" onclick="switchSettingsSection('security')">Security & Private Data</a>
+                            </div>
+                        </div>
+
+                        <div class="col-md-8">
+                            <div class="card p-4" id="settings-section-profile">
+                                <h5 class="fw-bold text-dark mb-3">Recruiter Profile</h5>
+                                <form id="form-settings-profile" onsubmit="saveSettingsProfile(event)">
+                                    <div class="mb-3">
+                                        <label class="form-label">Full Name</label>
+                                        <input type="text" class="form-control" value="Jane Doe" id="setting-rec-name" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Company Name</label>
+                                        <input type="text" class="form-control" value="Apex AI Solutions" id="setting-rec-company" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Work Email</label>
+                                        <input type="email" class="form-control" value="jane@company.com" disabled>
+                                        <span class="text-muted fs-8">Contact support to modify authenticated enterprise work domain.</span>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Update Profile</button>
+                                </form>
+                            </div>
+
+                            <div class="card p-4 d-none" id="settings-section-weights">
+                                <h5 class="fw-bold text-dark mb-3">AI Match Custom Weights</h5>
+                                <p class="text-muted small">Determine how weights are balanced across the score components (must sum up to 100%).</p>
+                                <form onsubmit="event.preventDefault(); showToast('Screening weights updated successfully.')">
+                                    <div class="mb-3">
+                                        <label class="form-label">Skills Alignment Weight (%)</label>
+                                        <input type="number" class="form-control" min="0" max="100" value="40" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Work Experience Match Weight (%)</label>
+                                        <input type="number" class="form-control" min="0" max="100" value="40" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Educational Alignment Weight (%)</label>
+                                        <input type="number" class="form-control" min="0" max="100" value="20" required>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Apply AI Blueprints</button>
+                                </form>
+                            </div>
+
+                            <div class="card p-4 d-none" id="settings-section-security">
+                                <h5 class="fw-bold text-dark mb-3">Security & GDPR Compliance</h5>
+                                <p class="text-muted small">Your workspace data is encrypted and completely isolated. Candidate data is never shared outside this organization profile.</p>
+                                <div class="mb-3 form-check form-switch border-bottom pb-3">
+                                    <input class="form-check-input" type="checkbox" role="switch" id="sec-anonymize">
+                                    <label class="form-check-label text-dark fw-bold fs-7" for="sec-anonymize">Anonymize candidate profile metrics during matching</label>
+                                    <p class="text-muted fs-8 m-0">Hides name, gender, and contact details from screening visual tables.</p>
+                                </div>
+                                <div class="mb-3 border-bottom pb-3">
+                                    <span class="text-dark fw-bold fs-7 d-block">Data Retention</span>
+                                    <p class="text-muted fs-8 mb-2">Configure when completed screening files are purged from memory storage.</p>
+                                    <select class="form-select form-select-sm" style="width:200px;">
+                                        <option value="never">Never auto-delete</option>
+                                        <option value="30">After 30 days</option>
+                                        <option value="90">After 90 days</option>
+                                    </select>
+                                </div>
+                                <button type="button" class="btn btn-primary" onclick="showToast('Security rules applied')">Save Security Rules</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </section>
+
+    <!-- Global Toast Notifications -->
+    <div class="toast-container position-fixed bottom-0 end-0 p-3" style="z-index: 1100;">
+        <div id="globalToast" class="toast align-items-center text-dark bg-white border border-2 border-primary-light" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="d-flex">
+                <div class="toast-body fw-bold fs-8" id="toast-text-body">
+                    Toast message content
+                </div>
+                <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS Bundle CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- App Logic Scripts -->
+    <script src="js/mockData.js"></script>
+    <script src="js/charts.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
