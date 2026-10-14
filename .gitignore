@@ -1,0 +1,27 @@
+# VS Code
+.vscode/
+
+# Environment variables and secrets
+.env
+.env.*
+
+# Dependencies
+node_modules/
+.venv/
+
+# Python generated files
+__pycache__/
+*.py[cod]
+
+# Local database and SQLite sidecars
+apex_screening.db
+apex_screening.db-shm
+apex_screening.db-wal
+
+# Build output
+dist/
+build/
+
+# OS files
+.DS_Store
+Thumbs.db
